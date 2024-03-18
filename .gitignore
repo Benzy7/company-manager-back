@@ -1,0 +1,7 @@
+.vscode/
+mysql/
+
+__pycache__/
+*.pyc
+
+.env
