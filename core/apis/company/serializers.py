@@ -28,6 +28,9 @@ class CompanyDetailSerializer(serializers.ModelSerializer):
 
 
 class CompanySerializer(serializers.ModelSerializer):
+    manager_first_name = serializers.CharField(source="manager.first_name", required=False)
+    manager_last_name = serializers.CharField(source="manager.last_name", required=False)
+
     def validate_siret(self, value):
         if not re.match(r'^\d{14}$', value):
             raise serializers.ValidationError("Siret must be a 14 characters.")
